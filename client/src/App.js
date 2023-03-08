@@ -20,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/favourites" element={<FavouritesPage />} />
+          <Route path="/recommendations" element={<Recommendations />} />
         </Routes>
       </BrowserRouter>
     </div>
