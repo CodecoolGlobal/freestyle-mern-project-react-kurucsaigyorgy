@@ -1,10 +1,10 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Favourites({details}){
     function handleClick(val){
         console.log(val, details.name);
-        fetch('/', {
+        fetch('/api/favourites', {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -29,6 +29,7 @@ function SearchBar() {
         setsearch(e.target.value)
     }
     function handleClick(){
+        if(search.length > 0){
         let url = `https://api.themoviedb.org/3/search/movie?api_key=856cfdccc26bfd6f158554be3cfbbdf7&language=en-US&query=${search}&page=1&include_adult=false`
         fetch(url).then(res => res.json()).then(searchResults => {
             setMoviesDisplayed(searchResults.results)
@@ -38,6 +39,7 @@ function SearchBar() {
 
         setHasSearched(true)
         }
+    }
 
     return hasSearched?(
        <div>{moviesDisplayed.map((movie, i)=> <><div key={i}>{movie.title}</div> <Favourites details={{id:movie.id, name: movie.title}}/></>)}</div>
