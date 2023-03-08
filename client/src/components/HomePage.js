@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import SearchBar from "./Searchbar";
 
 function HomePage() {
   const [searched, setSearched] = useState("");
@@ -16,10 +17,7 @@ function HomePage() {
 
   return (
     <div>
-      <a>
-        <input onInput={(e) => handleInput(e)}></input>
-        <button onClick={handleClick}>Search</button>
-      </a>
+      <SearchBar />
     </div>
   );
 }
