@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-function Favourites(){
+function FavouritesPage(){
    /*  fetch('/', {
         method: "POST",
         headers: {
@@ -10,8 +10,8 @@ function Favourites(){
       }); */
 
       return (
-        <button className='favourite'></button>
+       <h1>FAVOURITES PAGE</h1>
       )
 }
 
-export default Favourites
+export default FavouritesPage
