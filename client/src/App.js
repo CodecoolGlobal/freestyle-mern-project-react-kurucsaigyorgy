@@ -11,6 +11,7 @@ function App() {
     <div className="App">
       <h1>Narancs, Tetves es Dugo</h1>
       <SearchBar />
+      
     </div>
   );
 }
