@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Favourites from './components/Favourites';
 import SearchBar from './components/Searchbar';
 
+
 function App() {
   return (
     <div className="App">
