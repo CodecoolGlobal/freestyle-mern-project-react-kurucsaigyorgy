@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import { useState } from 'react'
 
 function Favourites({details}){
@@ -50,4 +50,4 @@ function SearchBar() {
     )
 }
 
-export default SearchBar
+export default SearchBar */
