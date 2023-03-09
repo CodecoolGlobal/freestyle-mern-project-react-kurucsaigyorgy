@@ -32,7 +32,7 @@ app.post('/api/favourites', (req,res)=>{
 app.get('/api/favourites', (req,res)=>{
     mongoose.connect(`mongodb+srv://storiaron:${PASSWORD}@cluster0.xxghtqt.mongodb.net/test`)
     .then(
-    Fav.find().then(favourites => console.log(favourites))
+    Fav.find().then(favourites => res.send(favourites ))
     .catch(err => console.log('Favourite fetch error: ', err))
     )
 })

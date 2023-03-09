@@ -3,7 +3,7 @@ import useEffect from 'react'
 
 function FavouritesPage(){
    fetch('/api/favourites')
-   .then(res => res.json)
+   .then(res => res.json())
    .then(favourites => console.log(favourites))
 
       return (
