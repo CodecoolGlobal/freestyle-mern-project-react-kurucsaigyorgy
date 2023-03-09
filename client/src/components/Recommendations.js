@@ -32,7 +32,7 @@ function Recommendations() {
   return !cucc?<div>Loading...</div>:
   <div key={null}>
     {cucc.results.map((el) =>{
-        return <div key={el.title}>{el.title}</div>
+        return <div className="movie-title" key={el.title}>{el.title}</div>
     })}
 
   </div>;

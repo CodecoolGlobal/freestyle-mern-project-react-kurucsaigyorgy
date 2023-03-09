@@ -7,6 +7,7 @@ function Menu() {
         <div className="dropdown-content">
           <a href="/">Home</a>
           <a href="/favourites">Favourites</a>
+          <a href="/recommendations">Recommendations</a>
         </div>
       </div>
   );
