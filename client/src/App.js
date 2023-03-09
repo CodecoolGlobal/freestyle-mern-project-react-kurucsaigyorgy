@@ -10,6 +10,7 @@ import HomePage from "./components/HomePage";
 import Menu from "./components/Menu";
 import HeaderComponent from "./components/HeaderComponent";
 import MovieDetails from "./components/MovieDetails";
+import Recommendations from "./components/Recommendations";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/favourites" element={<FavouritesPage />} />
           <Route path="/movie/:id" element={<MovieDetails />} />
+          <Route path="/recommendations" element={<Recommendations />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,23 +1,22 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Favourites({ details }) {
-  function handleClick(val) {
-    console.log(val, details.name);
-    fetch("/", {
+  function handleClick() {
+    console.log(details.id, details.name);
+    fetch("/api/favourites", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ id: val, title: details.name }),
+      body: JSON.stringify({ id: details.id, title: details.name }),
     });
   }
 
   return (
     <button
       className="favourite"
-      value={details.id}
       onClick={(e) => handleClick(e.currentTarget.value)}
     >
       ⭐
