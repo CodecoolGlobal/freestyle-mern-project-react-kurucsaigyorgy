@@ -2,6 +2,47 @@
   text-align: center;
 }
 
+html {
+  background-color: #272e35;
+}
+
+ .search_bar{
+  width: 300px;
+  height: 25px;
+  background-color: #959ea8;
+  align-items: center;
+  border-radius: 12px;
+  padding: 5px;
+} 
+
+.home_page_div{
+  color: white;
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+ .search_bar_container {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+} 
+
+.search_bar_button{
+  height: 30px;
+  font-size: 20px;
+  background-color: #262e34;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+} 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,7 +55,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -42,7 +82,7 @@
 /* Dropdown Button */
 .dropbtn {
   font-family: 'Yaro', Arial, sans-serif;
-  background-color: #464646;
+  background-color: #1b2025;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -99,3 +139,70 @@
   background-color: #6c7279;
 }
 
+header {
+  background-color: #1b2025;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+/* .favourite {
+  background-color: #262e34;
+  width: 30px;
+  height: auto;
+}
+
+.movies {
+  display: flex;
+  flex-direction: column;
+  
+  
+
+} */
+
+.movies {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.movie-title {
+  color: white;
+  margin-right: 10px;
+}
+
+.favourite {
+  display: inline-block;
+  background-color: #1b2025;
+  margin-left: 10px;
+}
+
+.detail_page_div{
+  text-align: left;
+  font-size: 15px;
+  padding-top: 60px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color:  white;
+
+}
+
+.detail_page_img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: 500px;
+}

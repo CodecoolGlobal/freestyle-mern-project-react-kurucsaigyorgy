@@ -8,18 +8,19 @@ import FavouritesPage from "./components/FavouritesPage";
 import SearchBar from "./components/Searchbar";
 import HomePage from "./components/HomePage";
 import Menu from "./components/Menu";
+import HeaderComponent from "./components/HeaderComponent";
+import MovieDetails from "./components/MovieDetails";
 
 
 function App() {
   return (
-    <div>
-      <header>HEADER
-      <Menu />
-      </header>
+    <div id="app">
+      <HeaderComponent />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/favourites" element={<FavouritesPage />} />
+          <Route path="/movie/:id" element={<MovieDetails />} />
         </Routes>
       </BrowserRouter>
     </div>

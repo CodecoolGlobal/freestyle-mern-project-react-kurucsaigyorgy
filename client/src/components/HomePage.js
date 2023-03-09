@@ -16,7 +16,7 @@ function HomePage() {
   }
 
   return (
-    <div>
+    <div className="home_page_div">
       <SearchBar />
     </div>
   );
