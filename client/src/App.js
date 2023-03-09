@@ -8,6 +8,7 @@ import FavouritesPage from "./components/FavouritesPage";
 import SearchBar from "./components/Searchbar";
 import HomePage from "./components/HomePage";
 import Menu from "./components/Menu";
+import Recommendations from "./components/Recommendations";
 
 
 function App() {
