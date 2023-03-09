@@ -1,18 +1,24 @@
 import React from 'react';
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 
 function FavouritesPage(){
+  const [favourites, setFavourites] = useState([])
   useEffect(()=>{
     fetch('/api/favourites')
    .then(res => res.json())
-   .then(favourites => console.log(favourites))
-
+   .then(favouriteMovies => setFavourites(favouriteMovies))
+    console.log(favourites);
    
   }, [])
    
+  console.log('here', favourites );
 
       return (
-       <h1>FAVOURITES PAGE</h1>
+        <div>
+       {favourites.map((film) => {
+        return <div key={film.title}>{film.title}</div>
+       })}
+       </div>
       )
 }
 
