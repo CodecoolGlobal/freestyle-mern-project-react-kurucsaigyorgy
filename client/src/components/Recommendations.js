@@ -20,17 +20,19 @@ function Recommendations() {
             .then((rec) => {
                 console.log('rec', rec)
               favourites = rec;
+              console.log('!!!!!!!!!!!!!!', favourites)
+              setCucc(favourites)
             });
         }
       });
       console.log('got here with favs', favourites)
-      setCucc(favourites)
+      
   }, []);
 
   return !cucc?<div>Loading...</div>:
-  <div>
-    {cucc.map((el) =>{
-        return <div>{el.title}</div>
+  <div key={null}>
+    {cucc.results.map((el) =>{
+        return <div key={el.title}>{el.title}</div>
     })}
 
   </div>;
