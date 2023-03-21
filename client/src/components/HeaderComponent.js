@@ -7,7 +7,7 @@ function HeaderComponent() {
   return (
     <header>
       <div className="logo">
-      <img id="logo" src={moviefylogo} alt="Moviefy Logo"/>
+      <img id="logo" src={moviefylogo} alt="Moviefy Logo" />
       </div>
       <Menu />
     </header>
