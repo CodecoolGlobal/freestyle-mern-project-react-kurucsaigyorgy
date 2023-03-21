@@ -16,7 +16,7 @@ function FavouritesPage(){
       return (
         <div>
        {favourites.map((film) => {
-        return <div key={film.title}>{film.title}</div>
+        return <><div className='movie-title' key={film.title}>{film.title}</div> <br></br></>
        })}
        </div>
       )

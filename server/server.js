@@ -1,22 +1,38 @@
+<<<<<<< HEAD
 const mongoose = require('mongoose');
 const express = require('express');
 require('dotenv').config();
 const PASSWORD = process.env.PASSWORD;
 const USERNAME = process.env.USERNAME;
+=======
+const mongoose = require("mongoose");
+const express = require("express");
+require("dotenv").config();
+const PASSWORD = process.env.PASSWORD;
+>>>>>>> 8ba8f873de3e17423d57fd21ca4b68808a900a39
 
 const app = express();
-
-app.set('view engine', 'ejs')
-app.use(function(req, res, next) {
+/* app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
-});
+}); */
 app.use(express.json());
+//rename fav to favourite, matching case for filenames
+let Fav = require("./model/FAV.js");
 
-let Fav = require('./model/FAV.js')
+mongoose.connect(
+  `mongodb+srv://storiaron:${PASSWORD}@cluster0.xxghtqt.mongodb.net/test`
+);
 
+app.post("/api/favourites", (req, res) => {
+  console.log(req.body);
+  Fav.create({ id: Number(req.body.id), title: req.body.title })
+    .then((result) => res.send(result))
+    .catch((err) => console.log("Dis but an error:", err));
+});
 
+<<<<<<< HEAD
  mongoose.connect(`mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.xxghtqt.mongodb.net/test`);
 
  
@@ -38,7 +54,18 @@ app.get('/api/favourites', (req,res)=>{
     .then(
     Fav.find().then(favourites => res.send(favourites ))
     .catch(err => console.log('Favourite fetch error: ', err))
+=======
+app.get("/api/favourites", (req, res) => {
+ return  mongoose
+    .connect(
+      `mongodb+srv://storiaron:${PASSWORD}@cluster0.xxghtqt.mongodb.net/test`
+>>>>>>> 8ba8f873de3e17423d57fd21ca4b68808a900a39
     )
-})
+    .then(
+      Fav.find()
+        .then((favourites) => res.send(favourites))
+        .catch((err) => console.log("Favourite fetch error: ", err))
+    );
+});
 
-app.listen(5000, () => console.log('Server is listening on port 5000'));
+app.listen(5000, () => console.log("Server is listening on port 5000"));
