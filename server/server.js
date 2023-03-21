@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const express = require('express');
-require('dotenv').config()
-const PASSWORD = process.env.PASSWORD
+require('dotenv').config();
+const PASSWORD = process.env.PASSWORD;
+const USERNAME = process.env.USERNAME;
 
 const app = express();
 
@@ -16,7 +17,10 @@ app.use(express.json());
 let Fav = require('./model/FAV.js')
 
 
- mongoose.connect(`mongodb+srv://storiaron:${PASSWORD}@cluster0.xxghtqt.mongodb.net/test`)
+ mongoose.connect(`mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.xxghtqt.mongodb.net/test`);
+
+ 
+
 
 app.get('/', (req, res) => {
     res.render('index');
@@ -30,7 +34,7 @@ app.post('/api/favourites', (req,res)=>{
 })
 
 app.get('/api/favourites', (req,res)=>{
-    mongoose.connect(`mongodb+srv://storiaron:${PASSWORD}@cluster0.xxghtqt.mongodb.net/test`)
+    mongoose.connect(`mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.xxghtqt.mongodb.net/test`)
     .then(
     Fav.find().then(favourites => res.send(favourites ))
     .catch(err => console.log('Favourite fetch error: ', err))
