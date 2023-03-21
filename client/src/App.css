@@ -28,9 +28,15 @@ html {
  .search_bar_container {
 
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100%;
+} 
+
+.search_bar_div {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 } 
 
 .search_bar_button{
@@ -42,6 +48,10 @@ html {
   padding: 8px;
   cursor: pointer;
 } 
+
+h1 {
+  color: white;
+}
 
 .App-logo {
   height: 40vmin;

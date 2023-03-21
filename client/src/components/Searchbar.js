@@ -24,11 +24,13 @@ function SearchBar() {
   return (
     <div className="search_bar_div">
       <h1>Find a movie...</h1>
+      <div className="search_bar_container">
       <input className="search_bar" onInput={(e) => handleInput(e)}></input>
       <button className="search_bar_button" onClick={handleClick}>
         {" "}
         🔍{" "}
       </button>
+      </div>
     </div>
   );
 }
