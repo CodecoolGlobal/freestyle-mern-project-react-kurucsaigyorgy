@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function Favourites({ details }) {
   function handleClick() {
     console.log(details.id, details.name);
-    fetch("/api/favourites", {
+  return   fetch("/api/favourites", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
