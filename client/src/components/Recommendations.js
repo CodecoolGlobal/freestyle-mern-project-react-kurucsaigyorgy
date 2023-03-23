@@ -11,22 +11,19 @@ function Recommendations() {
     fetch("/api/favourites")
       .then((res) => res.json())
       .then((favouriteMovies) => {
-        for(let i = favouriteMovies.length-1; i >= 0; i-- ){
-          for(let cucc = 0; cucc < favouriteMovies[i].rating; cucc++){
-          favourites.push(favouriteMovies[i].id)
-          }
-        }
+        favourites = favouriteMovies;
 
         if (favourites.length) {
           for (let i = 0; i < favourites.length; i++) {
             fetch(
-              `https://api.themoviedb.org/3/movie/${favourites[i]}/recommendations?api_key=856cfdccc26bfd6f158554be3cfbbdf7&language=en-US&page=1`
+              `https://api.themoviedb.org/3/movie/${favourites[i].id}/recommendations?api_key=856cfdccc26bfd6f158554be3cfbbdf7&language=en-US&page=1`
             )
               .then((res) => res.json())
+              // eslint-disable-next-line no-loop-func
               .then((rec) => {
-                recommendations.push(
-                  rec.results[Math.floor(Math.random()*10)]
-                )
+                for (let a = 0; a < favourites[i].rating; a++) {
+                  recommendations.push(rec.results[a]);
+                }
                 setdisplayedMovies([...recommendations]);
               });
           }
@@ -34,7 +31,6 @@ function Recommendations() {
       });
   }, []);
 
-  
   return (
     <div>
       {displayedMovies.map((el) => {

@@ -8,7 +8,7 @@ function FavouritesPage(){
    .then(res => res.json())
    .then(favouriteMovies => setFavourites(favouriteMovies))
    
-  }, [favourites])
+  }, [])
    
   function handleChange(e){
     setFavourites([...favourites])
