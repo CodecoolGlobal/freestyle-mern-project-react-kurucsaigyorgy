@@ -11,7 +11,11 @@ function Recommendations() {
     fetch("/api/favourites")
       .then((res) => res.json())
       .then((favouriteMovies) => {
-        favouriteMovies.forEach((el) => favourites.push(el.id));
+        for(let i = favouriteMovies.length-1; i >= 0; i-- ){
+          for(let cucc = 0; cucc < favouriteMovies[i].rating; cucc++){
+          favourites.push(favouriteMovies[i].id)
+          }
+        }
 
         if (favourites.length) {
           for (let i = 0; i < favourites.length; i++) {
@@ -21,16 +25,16 @@ function Recommendations() {
               .then((res) => res.json())
               .then((rec) => {
                 recommendations.push(
-                  rec.results[0],
-                  rec.results[1],
-                  rec.results[2]
-                );
+                  rec.results[Math.floor(Math.random()*10)]
+                )
                 setdisplayedMovies([...recommendations]);
               });
           }
         }
       });
   }, []);
+
+  
   return (
     <div>
       {displayedMovies.map((el) => {

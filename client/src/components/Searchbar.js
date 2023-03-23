@@ -10,7 +10,7 @@ function Favourites({ details }) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ id: details.id, title: details.name }),
+      body: JSON.stringify({ id: details.id, movieTitle: details.name }),
     });
   }
 
