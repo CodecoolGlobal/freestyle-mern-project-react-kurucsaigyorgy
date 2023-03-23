@@ -11,7 +11,9 @@ function FavouritesPage(){
    
   }, [])
    
-  console.log('here', favourites );
+  function handleClick(){
+
+  }
 
       return (
         <div>

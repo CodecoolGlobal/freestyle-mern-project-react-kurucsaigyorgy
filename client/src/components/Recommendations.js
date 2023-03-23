@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 function Recommendations() {
-  const [cucc, setCucc] = useState([]);
+  const [displayedMovies, setdisplayedMovies] = useState([]);
 
   useEffect(() => {
     let recommendations = [];
@@ -25,18 +25,24 @@ function Recommendations() {
                   rec.results[1],
                   rec.results[2]
                 );
-                setCucc([...recommendations])
-              })
+                setdisplayedMovies([...recommendations]);
+              });
           }
-          
         }
       });
   }, []);
-  
   return (
     <div>
-      {cucc.map((el) => {
-        return <div className="movie-title">{el.title}</div>;
+      {displayedMovies.map((el) => {
+        if (!el) {
+          return null;
+        } else {
+          return (
+            <div className="movie-title" key={el.title}>
+              {el.title}
+            </div>
+          );
+        }
       })}
     </div>
   );

@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Favourites({ details }) {
-  function handleClick() {
-    console.log(details.id, details.name);
+  function handleClick(e) {
+    e.target.innerText =  '⭐'
   return   fetch("/api/favourites", {
       method: "POST",
       headers: {
@@ -17,9 +17,10 @@ function Favourites({ details }) {
   return (
     <button
       className="favourite"
-      onClick={(e) => handleClick(e.currentTarget.value)}
+      onClick={(e) => handleClick(e)}
     >
-      ⭐
+      ✩
+     
     </button>
   );
 }
