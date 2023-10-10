@@ -1,3 +1,1 @@
-Project mernify:
-Freestyle MERN Project to implement basic CRUD operations with Mongoose and build frontend for the application with React.
-Spotify Developer API is used in this project to search tracks, create playlists.
+MovieFy is an immersive web application developed using the MERN stack. With MovieFy, users can effortlessly search for their favorite movies using an external API, save them for future reference, and receive personalized movie recommendations.
