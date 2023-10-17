@@ -27,8 +27,7 @@ One of our earlier project that focuses on obtaining coding hard skills, the (pr
 ## Getting Started
 1. Clone the repository
 2. Replace the base mongodb connection string with yours in the server.js file
-3. npm install
-4. node server.js
-5. Navigate to the client folder
-6. npm start
-7. enjoy :)
+3. node server.js
+4. Navigate to the client folder
+5. npm start
+6. enjoy :)
